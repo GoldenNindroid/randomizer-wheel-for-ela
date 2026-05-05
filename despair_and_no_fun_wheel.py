@@ -257,7 +257,6 @@ class SpinWheelApp:
         self.root = root
         self.root.title("mr chung's wheel of saddness and despair")
         self.root.configure(bg="#0d0d1a")
-        self.root.resizable(False, False)
 
         self.items = ["me", "myself", "I", "yours truly", "that guy", "him"]
 
