@@ -379,7 +379,7 @@ class SpinWheelApp:
 
         tk.Label(
             top_row,
-            text = "M R . C H U N G ' S  O F  H A P P I N E S S  A N D  J O Y",
+            text = "M R . C H U N G ' S  W H E E L  O F  H A P P I N E S S  A N D  J O Y",
             font = ("Courier", 28, "bold"),
             fg   = "#FFD700",
             bg   = "#0d0d1a",
@@ -562,6 +562,78 @@ class SpinWheelApp:
             ).pack(side="left", padx=(0, 6))
 
     # ────────────────────────────────────────────────────────────────────────
+    #  CREDITS WINDOW
+    # ────────────────────────────────────────────────────────────────────────
+    def open_credits(self):
+        dlg = tk.Toplevel(self.root)
+        dlg.title("🙌 Special Thanks")
+        dlg.configure(bg="#0d0d1a")
+        dlg.grab_set()
+        
+        def section(parent, title):
+            tk.Label(parent, text=title, font=("Courier", 13, "bold"),
+                     fg="#FFD700", bg="#0d0d1a").pack(anchor="w", pady=(14, 4))
+        outer = tk.Frame(dlg, bg="#0d0d1a")
+        outer.pack(padx=28, pady=20)
+
+        section(outer, "Mantis Tribe")
+        tk.Label(outer,
+                 text    = "Special thanks to Lung Cancer, Fallen Galaxy, Mystic, Supernova, Stoner, Oni, Videogamegod21",
+                 font    = ("Courier", 10),
+                 fg      = "#888",
+                 bg      = "#0d0d1a",
+                 justify = "left").pack(anchor="w")
+        section(outer, "Gim Troupe")
+        tk.Label(outer,
+                 text    = "Special thanks to Lung Cancer (again), 15chefsXL, Jimeh, Gim, IKGim, Plague, Haider, Lasanga, Seasalt",
+                 font    = ("Courier", 10),
+                 fg      = "#888",
+                 bg      = "#0d0d1a",
+                 justify = "left").pack(anchor="w")
+        section(outer, "Kingdom of Hallownest")
+        tk.Label(outer,
+                 text    = "Special thanks to Knight, Ashlyn, Ralsei/Dess, Opal, Emerald, Godseeker, Hornet/Hazlenut, Seer, Void, Mato",
+                 font    = ("Courier", 10),
+                 fg      = "#888",
+                 bg      = "#0d0d1a",
+                 justify = "left").pack(anchor="w")
+        section(outer, "Youtubers/Devolpers for coding")
+        tk.Label(outer,
+                 text    = "Special thanks to Kaupenjoe, DougDoug, Crin, DougDougDoug, Toby Fox, LocalThunk, Minikloon",
+                 font    = ("Courier", 10),
+                 fg      = "#888",
+                 bg      = "#0d0d1a",
+                 justify = "left").pack(anchor="w")
+        section(outer, "Background Music I used when I was coding")
+        tk.Label(outer,
+                 text    = "Special thanks to Bubble Pop Electric, 1 Hour of Agnes Tachyon, khaos emerald, goofy goober playlist,\nRisk of Rain 2 + Deltarune + Celsete + Silksong + Balatro + Cult of the Lamb + lobotomy kasien OST",
+                 font    = ("Courier", 10),
+                 fg      = "#888",
+                 bg      = "#0d0d1a",
+                 justify = "left").pack(anchor="w")
+        section(outer, "My Friends")
+        tk.Label(outer,
+                 text    = "everyone one in those goated group chats",
+                 font    = ("Courier", 10),
+                 fg      = "#888",
+                 bg      = "#0d0d1a",
+                 justify = "left").pack(anchor="w")
+        section(outer, "My Teachers")
+        tk.Label(outer,
+                 text    = "Mr. Chung",
+                 font    = ("Courier", 10),
+                 fg      = "#888",
+                 bg      = "#0d0d1a",
+                 justify = "left").pack(anchor="w")
+        section(outer, "Other")
+        tk.Label(outer,
+                 text    = "Special thanks to Fuse, for writing my favorite series\nYuu Tanaka for my second favorite\nGoober my glorious bot I made\n" \
+                            "Fujimoto and Gege, I hate you\nMy Parents\nMsPaint\nDrawnParrot for being a hella chill guy\nand last, Cayden.",
+                 font    = ("Courier", 10),
+                 fg      = "#888",
+                 bg      = "#0d0d1a",
+                 justify = "left").pack(anchor="w")
+    # ────────────────────────────────────────────────────────────────────────
     #  SETTINGS POPUP
     # ────────────────────────────────────────────────────────────────────────
 
@@ -569,7 +641,6 @@ class SpinWheelApp:
         dlg = tk.Toplevel(self.root)
         dlg.title("⚙  Settings")
         dlg.configure(bg="#0d0d1a")
-        dlg.resizable(False, False)
         dlg.grab_set()
 
         def section(parent, title):
@@ -649,7 +720,28 @@ class SpinWheelApp:
                 selectcolor      = "#1a1a3a",
                 activebackground = "#0d0d1a",
             ).pack(side="left", padx=(0, 20))
-
+        section(outer, "CREDITS")
+        tk.Label(outer,
+                 text            = "Deepak Goteti  |  Period 1  |  Class of 2026\n"
+                                   "little bit of Claude because some of this was mad annoying to debug",
+                 font    = ("Courier", 10),
+                 fg      = "#888",
+                 bg      = "#0d0d1a",
+                 justify = "left").pack(anchor="w")
+        tk.Button(
+            outer,
+            text = "Special Thanks (Very Long)",
+            font    = ("Courier", 9, "bold"),
+            fg      = "#0d0d1a",
+            bg      = "grey",
+            relief  = "flat",
+            padx    = 5,
+            pady    = 2,
+            cursor  = "hand2",
+            command = self.open_credits).pack(anchor="w")
+        
+        grid = tk.Frame(outer, bg="#0d0d1a")
+        grid.pack(anchor="w")
         tk.Button(
             outer,
             text    = "✓  Done",
@@ -704,7 +796,7 @@ class SpinWheelApp:
                 if slice_deg >= 6:
                     cv.create_text(tx, ty, text=label,
                                    font=("Courier", fs, "bold"),
-                                   fill="white", angle=mid_deg)
+                                   fill="black", angle=mid_deg)
 
         cv.create_oval(cx-r, cy-r, cx+r, cy+r,
                        outline="#FFD700", width=4, fill="")
@@ -724,7 +816,7 @@ class SpinWheelApp:
                 cv.create_text(cx, (by1 + by2) / 2,
                                text=self.banner_text,
                                font=("Courier", 26, "bold"),
-                               fill="white")
+                               fill="black")
 
     def _draw_stickman(self):
         """Show PNG if available, otherwise draw the stick figure."""
