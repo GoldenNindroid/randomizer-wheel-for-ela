@@ -592,7 +592,7 @@ class SpinWheelApp:
                  justify = "left").pack(anchor="w")
         section(outer, "Kingdom of Hallownest")
         tk.Label(outer,
-                 text    = "Special thanks to Knight, Ashlyn, Ralsei/Dess, Opal, Emerald, Godseeker, Hornet/Hazlenut, Seer, Void, Mato",
+                 text    = "Special thanks to Knight, Ashlyn, Ralsei/Dess, Opal, Nightmare Heart, Emerald, Godseeker, Hornet/Hazlenut, Seer, Void, Mato",
                  font    = ("Courier", 10),
                  fg      = "#888",
                  bg      = "#0d0d1a",
