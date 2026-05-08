@@ -722,7 +722,7 @@ class SpinWheelApp:
             ).pack(side="left", padx=(0, 20))
         section(outer, "CREDITS")
         tk.Label(outer,
-                 text            = "Deepak Goteti  |  Period 1  |  Class of 2026\n"
+                 text            = "|  Period 1  |  Class of 2026\n"
                                    "little bit of Claude because some of this was mad annoying to debug",
                  font    = ("Courier", 10),
                  fg      = "#888",
